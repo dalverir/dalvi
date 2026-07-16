@@ -1,0 +1,35 @@
+:root{--brand:#0A84FF;--ink:#1C1C1E;--body:#48484A;--muted:#8E8E93;--bg:#F2F2F7;--card:#FFF;--border:#E5E5EA;--radius:18px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding:0 24px}
+header{padding:48px 0 32px;text-align:center}
+.logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.logo-mark{width:42px;height:42px;border-radius:11px;background:var(--brand);display:grid;place-items:center;color:#fff;font-size:22px}
+.logo-name{font-size:24px;font-weight:700;letter-spacing:-.02em}
+.card{background:var(--card);border-radius:var(--radius);padding:40px;margin-bottom:24px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+h1{font-size:32px;font-weight:700;letter-spacing:-.02em;margin-bottom:8px}
+.updated{color:var(--muted);font-size:14px;margin-bottom:32px}
+h2{font-size:19px;font-weight:600;margin:32px 0 12px;letter-spacing:-.01em}
+h2:first-of-type{margin-top:0}
+p{color:var(--body);margin-bottom:14px}
+ul{color:var(--body);margin:0 0 14px 20px}
+li{margin-bottom:7px}
+strong{color:var(--ink);font-weight:600}
+a{color:var(--brand);text-decoration:none}
+a:hover{text-decoration:underline}
+.highlight{background:rgba(10,132,255,.07);border-radius:12px;padding:20px 24px;margin:24px 0}
+.highlight p:last-child{margin-bottom:0}
+.hero{text-align:center;padding:24px 0 8px}
+.hero h1{font-size:42px;margin-bottom:16px}
+.tagline{font-size:19px;color:var(--body);max-width:520px;margin:0 auto 32px}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:8px}
+.feature{background:var(--card);border-radius:14px;padding:24px;text-align:left}
+.feature-icon{font-size:24px;margin-bottom:10px;display:block}
+.feature h3{font-size:15px;font-weight:600;margin-bottom:5px}
+.feature p{font-size:14px;margin:0;color:var(--muted)}
+.contact{background:var(--card);border-radius:12px;padding:20px 24px;margin-top:8px}
+.contact a{font-weight:600}
+footer{text-align:center;padding:32px 0 56px;color:var(--muted);font-size:14px}
+footer nav{margin-bottom:12px;display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
+footer nav a{color:var(--body)}
+@media(max-width:600px){.card{padding:28px 24px}h1{font-size:27px}.hero h1{font-size:32px}}
