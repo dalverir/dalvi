@@ -1,35 +1,269 @@
-:root{--brand:#0A84FF;--ink:#1C1C1E;--body:#48484A;--muted:#8E8E93;--bg:#F2F2F7;--card:#FFF;--border:#E5E5EA;--radius:18px}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
-.wrap{max-width:720px;margin:0 auto;padding:0 24px}
-header{padding:48px 0 32px;text-align:center}
-.logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
-.logo-mark{width:42px;height:42px;border-radius:11px;background:var(--brand);display:grid;place-items:center;color:#fff;font-size:22px}
-.logo-name{font-size:24px;font-weight:700;letter-spacing:-.02em}
-.card{background:var(--card);border-radius:var(--radius);padding:40px;margin-bottom:24px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
-h1{font-size:32px;font-weight:700;letter-spacing:-.02em;margin-bottom:8px}
-.updated{color:var(--muted);font-size:14px;margin-bottom:32px}
-h2{font-size:19px;font-weight:600;margin:32px 0 12px;letter-spacing:-.01em}
-h2:first-of-type{margin-top:0}
-p{color:var(--body);margin-bottom:14px}
-ul{color:var(--body);margin:0 0 14px 20px}
-li{margin-bottom:7px}
-strong{color:var(--ink);font-weight:600}
-a{color:var(--brand);text-decoration:none}
-a:hover{text-decoration:underline}
-.highlight{background:rgba(10,132,255,.07);border-radius:12px;padding:20px 24px;margin:24px 0}
-.highlight p:last-child{margin-bottom:0}
-.hero{text-align:center;padding:24px 0 8px}
-.hero h1{font-size:42px;margin-bottom:16px}
-.tagline{font-size:19px;color:var(--body);max-width:520px;margin:0 auto 32px}
-.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:8px}
-.feature{background:var(--card);border-radius:14px;padding:24px;text-align:left}
-.feature-icon{font-size:24px;margin-bottom:10px;display:block}
-.feature h3{font-size:15px;font-weight:600;margin-bottom:5px}
-.feature p{font-size:14px;margin:0;color:var(--muted)}
-.contact{background:var(--card);border-radius:12px;padding:20px 24px;margin-top:8px}
-.contact a{font-weight:600}
-footer{text-align:center;padding:32px 0 56px;color:var(--muted);font-size:14px}
-footer nav{margin-bottom:12px;display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
-footer nav a{color:var(--body)}
-@media(max-width:600px){.card{padding:28px 24px}h1{font-size:27px}.hero h1{font-size:32px}}
+:root {
+  --brand: #0A84FF;
+  --brand-gradient: linear-gradient(135deg, #0A84FF 0%, #5E5CE6 100%);
+  --bg: #0B0F19; /* Modern derin lacivert/siyah arka plan */
+  --card: #161B26; /* Kartlar için koyu gri-lacivert tonu */
+  --ink: #FFFFFF;
+  --body: #94A3B8; /* Daha okunabilir soft gri yazı rengi */
+  --muted: #64748B;
+  --border: rgba(255, 255, 255, 0.08);
+  --radius: 20px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Sayfa Sarmalayıcı */
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header & Logo */
+header {
+  padding: 64px 0 40px;
+  text-align: center;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--ink);
+  transition: transform 0.2s ease;
+}
+
+.logo:hover {
+  transform: scale(1.03);
+}
+
+.logo-mark {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(10, 132, 255, 0.3);
+}
+
+.logo-name {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -.03em;
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Kart Yapısı (Privacy, Terms, Support Sayfaları İçin) */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 48px;
+  margin-bottom: 32px;
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -.03em;
+  margin-bottom: 12px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #A5B4FC 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.updated {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 36px;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 40px 0 16px;
+  letter-spacing: -.02em;
+  color: #E2E8F0;
+}
+
+h2:first-of-type {
+  margin-top: 0;
+}
+
+p {
+  color: var(--body);
+  margin-bottom: 18px;
+  font-size: 16px;
+}
+
+ul {
+  color: var(--body);
+  margin: 0 0 20px 24px;
+  font-size: 16px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+strong {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+a {
+  color: var(--brand);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #60A5FA;
+  text-decoration: underline;
+}
+
+/* Öne Çıkan Kutular (Highlight) */
+.highlight {
+  background: rgba(10, 132, 255, 0.08);
+  border-left: 4px solid var(--brand);
+  border-radius: 8px;
+  padding: 24px;
+  margin: 32px 0;
+}
+
+.highlight p {
+  color: #E2E8F0;
+}
+
+/* Ana Sayfa Hero Alanı */
+.hero {
+  text-align: center;
+  padding: 40px 0 24px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #FFFFFF 30%, #93C5FD 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tagline {
+  font-size: 20px;
+  color: var(--body);
+  max-width: 560px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+/* Özellikler Grid Yapısı (Features) */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 16px;
+}
+
+.feature {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  text-align: left;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+  border-color: rgba(10, 132, 255, 0.3);
+  box-shadow: 0 12px 30px rgba(10, 132, 255, 0.1);
+}
+
+.feature-icon {
+  font-size: 28px;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.feature h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #FFFFFF;
+}
+
+.feature p {
+  font-size: 14.5px;
+  margin: 0;
+  color: var(--body);
+  line-height: 1.5;
+}
+
+/* İletişim Kutusu */
+.contact {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+  margin-top: 16px;
+  text-align: center;
+}
+
+/* Footer Alanı */
+footer {
+  text-align: center;
+  padding: 48px 0 64px;
+  color: var(--muted);
+  font-size: 14px;
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+}
+
+footer nav {
+  margin-bottom: 16px;
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+footer nav a {
+  color: var(--body);
+  font-weight: 400;
+}
+
+footer nav a:hover {
+  color: #FFFFFF;
+}
+
+/* Mobil Uyum */
+@media (max-width: 600px) {
+  .card {
+    padding: 32px 20px;
+  }
+  h1 {
+    font-size: 30px;
+  }
+  .hero h1 {
+    font-size: 36px;
+  }
+  .tagline {
+    font-size: 18px;
+  }
+}
